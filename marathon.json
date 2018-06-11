@@ -1,0 +1,31 @@
+{
+  "id": "app",
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "devk123/testing_20",
+      "parameters": [
+        {
+          "key": "log-driver",
+          "value": "none"
+        } 
+      ]
+    },
+    "portMappings": [
+      { "port": 0, "protocol": "tcp" ,
+     "labels": {
+        "VIP_0": "/app:10000"
+      }}
+    ]
+  },
+  "networks": [
+    {
+      "mode": "host"
+    }
+  ],
+  "acceptedResourceRoles": ["slave_public"],
+  "instances": 1,
+  "cpus": 0.1,
+  "mem": 64
+}
+
